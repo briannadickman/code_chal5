@@ -13,16 +13,19 @@ router.get('/', function(req,res){
       console.log(err);
       res.send(500);
     }
-
+    
     res.send(messages);
   });
 });
 
 router.post('/', function(req,res){
+  console.log('in router.post with: ', req.body);
   var message = new Message({
     name: req.body.name,
     message: req.body.message
   });
+
+  // console.log('saved message is: ', message);
 
   message.save(function(err, savedMessage){
     if(err){

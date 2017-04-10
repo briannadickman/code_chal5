@@ -1,0 +1,8 @@
+.container-fluid {
+  background-color: honeydew;
+}
+
+.page-header {
+  text-align: right;
+  border-bottom: none;
+}

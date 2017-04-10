@@ -2,7 +2,7 @@
 <html ng-app="myApp">
   <head>
     <meta charset="utf-8">
-    <title>Chi MEAN</title>
+    <title>(clever messaging service name here)</title>
 
     <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" href="styles/style.css" />
@@ -12,6 +12,38 @@
 
   </head>
   <body>
+
+    <main>
+
+        <div class='container-fluid'>
+          <h1 class='page-header'>(clever messaging service name here)</h1>
+        </div>
+
+        <div ng-controller='MessageController'>
+          <div class='container'>
+                  <div class='row'>
+
+                      <form class='form-group'>
+                        <!-- <label for="message">Message: </label> -->
+                        <div class='col-md-2'>
+                          <input type="text" placeholder="name" id='sender' class='form-control' ng-model='messageObject.name'>
+                        </div>
+                        <div class='col-md-8'>
+                          <input type="text" placeholder="Begin typing message here..." id='message' class='form-control' ng-model='messageObject.message'>
+                        </div>
+                        <div class='col-md-2'>
+                          <button type="button" name="button" ng-click="sendMessage(messageObject)" class='btn'>Send</button>
+                        </div>
+                      </form>
+                  </div>
+                      <h3 class='lead'>Messages:</h3>
+                      <div ng-repeat='message in messageArray[0]'>
+                        <div><b>{{ message.name }}</b>: {{ message.message }}</div>
+                      </div>
+          </div>
+        </div>
+
+    </main>
 
   </body>
 </html>
